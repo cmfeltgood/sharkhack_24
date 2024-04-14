@@ -99,15 +99,16 @@ button {
   border: #f5c876 2px solid;
 }
 
-.game-container {
+.grid-container {
   display: grid;
   gap: 10px;
   overflow: hidden;
 }
 
 .grid-item {
-  height: 50px;
-  width: 50px;
+  min-height: 50px;
+  min-width: 50px;
+  border: 1px solid white;
 }
 
 #title {grid-area: title;}
