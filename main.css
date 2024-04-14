@@ -2,6 +2,16 @@ h1 {
   text-align: center;
 }
 
+.inner-container {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  width: 98vw;
+}
+
 .game_container {
   background-color: pink;
   width: 80%;
@@ -16,4 +26,33 @@ h1 {
   width: 40%;
   flex-direction: column;
   background-color: wheat;
+}
+
+.instructions {
+  position: fixed;
+  padding: 1%;
+  width: 50%;
+  z-index: 20;
+}
+
+.instructions:after {
+  position: fixed;
+  content: "";
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background: rgba(0,0,0,0.5);
+  z-index: -2;
+}
+
+.instructions:before {
+  position: absolute;
+  content: "";
+  top: 0;
+  left: 0;
+  bottom:	 0;
+  right: 0;
+  background: #FFF;
+  z-index: -1;
 }
