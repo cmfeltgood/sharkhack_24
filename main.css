@@ -98,3 +98,8 @@ button {
   border-radius: 10px;
   border: #f5c876 2px solid;
 }
+
+.grid-item {
+  height: 30px;
+  width: 30px;
+}
