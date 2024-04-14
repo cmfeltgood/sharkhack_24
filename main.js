@@ -7,7 +7,7 @@ let grid = [["none","none","none","none"],
 ["none","none","none","none"],
 ["none","none","none","none"],
 ["none","none","none","none"]];
-
+let divGrid = grid;
 
 
 function paintGrid(row, col) {
@@ -30,6 +30,20 @@ function getTemplateAreaString(){
   return str;
 }
 
+function setDivGrid(){
+  divs = ["title","head1","t1"];
 
+  //title loop
+  let loop = true;
+  let row = 0;
+  let col = 0;
+  while (loop){
+    
+  }
+}
+
+function hide(id){
+  document.getElementById(id).style.display = 'none';
+}
 
 alert(getTemplateAreaString())
