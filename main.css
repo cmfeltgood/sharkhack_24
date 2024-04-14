@@ -1,3 +1,9 @@
+:root {
+  --bgDark: #17526e;
+  --bgLight: #25727d;
+}
+
+
 * {
   margin: 0;
   padding: 0;

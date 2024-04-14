@@ -7,11 +7,12 @@ let grid = [["title","title","none","none"],
 ["header","header","header","none"],
 ["none","none","body","body"],
 ["body","none","none","none"]];
-let divGrid = grid;
+let divGrid;
 
 
 function paintGrid(row, col) {
   grid[row][col] = mode;
+  refreshElements();
 }
 
 function setMode(newMode){
@@ -31,6 +32,14 @@ function getTemplateAreaString(){
 }
 
 function setDivGrid(){
+  divGrid = []
+  for (i in grid){
+    divGrid.push([]);
+    for (j in grid[i]){
+      divGrid[i].push(grid[i][j])
+    }
+  }
+
   divs = ["title","head0"];
   divGrid = grid;
 
@@ -75,10 +84,10 @@ function setDivGrid(){
       if (row == grid.length){loop = false;}
     }
   }
-  if (squares.length == 0) {return "header fail 1";}
+  if (squares.length == 0) {return "header fail";}
   row = squares[0][0];
   for (i in squares){
-    if (squares[i][0] != row){return "header fail 2";}
+    if (squares[i][0] != row){return "header fail";}
   }
 
 
@@ -145,9 +154,11 @@ function refreshElements(){
   //   main.removeChild(i);
   // }
   const divs = setDivGrid();
+  if (divs == "title fail"){return 0}
+  else if (divs == "header fail"){return 1}
   main.style.gridTemplateAreas = getTemplateAreaString();
   let div;
-  alert(divs);
+  //alert(divs);
   let inner;
   for (i in divs){
     div = document.createElement("div");
@@ -169,11 +180,10 @@ function refreshElements(){
     else if (divs[i].charAt(0) == "b"){
       div.className = 'body';
       inner = document.createElement("p");
-      inner.innerHTML = "God damn these sharks were rough. But also gay? The sharks were involved in homosexual activities, which was fun. God damn these sharks were rough. But also gay? The sharks were involved in homosexual activities, which was fun. God damn these sharks were rough. But also gay? The sharks were involved in homosexual activities, which was fun. God damn these sharks were rough. But also gay? The sharks were involved in homosexual activities, which was fun."
-      div.appendChild(inner)
+      div.appendChild(inner);
     }
     else if (divs[i].charAt(0) == 'n'){div.className = 'none';}
-    div.className += " grid-item"
+    div.className += " grid-item";
     main.appendChild(div);
   }
   stopOverflow()
@@ -181,6 +191,7 @@ function refreshElements(){
 
 function stopOverflow() {
   var body = document.getElementsByClassName("body");
+  body[0].firstElementChild.innerHTML = "Simmons University in Fenway was the scene of an unprecedented event today when a shark was found on the premises. The university's security personnel were alerted to the situation when the shark was detected in the university's aquatic center. Fortunately, no students or staff were harmed in this incident. The authorities were quickly alerted and the situation was handled swiftly. The shark was safely removed from the premises and released back into the ocean by a team of marine biologists.";
   for (let i = 0; i < body.length-1; i++) {
     b1 = body[i];
     p1 = body[i].firstElementChild;
@@ -220,6 +231,12 @@ function moveOverflowBody() {
 
 }
 
+
+function changeColor(hexDark, hexLight){
+  const root = document.querySelector(':root');
+  root.style.setProperty('--bgDark', hexDark);
+  root.style.setProperty('--bgLight', hexLight);
+}
 
 //alert(getTemplateAreaString())
 
