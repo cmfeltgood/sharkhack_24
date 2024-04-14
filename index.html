@@ -14,25 +14,40 @@
         </nav>
       </header>
       <div class="instructions" id="instructions">
+        <h2>Welcome to Article Design Game!</h2>
         <p>Put text here</p>
-        <button onClick="hide(instructions)">Okay!</button>
+        <button onClick="hide('instructions')">Okay!</button>
       </div>
-      <div class="game_container">
+      <div class="game-container">
         <div class="col">
           <div class="grid-container">
-            <div class="title">Title</div>
+            <p>Add grid here every time grid is changed</p>
+            <!-- <div class="title">Title</div>
             <div class="header1">Header 1</div>
             <div class="header2">Header 2</div>
             <div class="body">Body Text</div>
-            <div class="image">Image</div>
+            <div class="image">Image</div> -->
           </div>
           <p>grid goes here</p>
         </div>
         <div class="col">
-          <p>Menu options (title, header, etc.) goes here</p>
+          <form>
+            <input type="radio" id="title" name="tool_select" value="Title">
+            <label for="title">Title</label><br>
+            <input type="radio" id="header" name="tool_select" value="Header">
+            <label for="header">Header</label><br>
+            <input type="radio" id="body" name="tool_select" value="Body">
+            <label for="body">Body</label><br>
+            <input type="radio" id="image" name="tool_select" value="Image">
+            <label for="image">Image</label><br>
+            <input type="radio" id="none" name="tool_select" value="None">
+            <label for="None">None</label>
+          </form>          
         </div>
       </div>
-  
+      <footer>
+        <p>Created by Echo Chamber III<br>Aysha Taha, Christine Felt, Lee Cummings</p>
+      </footer>
       <script src="main.js"></script>  
     </div>
   </body>
