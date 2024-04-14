@@ -158,13 +158,14 @@ function hide(id){
 
 
 function refreshElements(){
+  const divs = setDivGrid();
+  if (divs == "title fail"){return 0}
+  else if (divs == "header fail"){return 1}
   const main = document.getElementById("gc");
   while (main.firstChild) {
     main.removeChild(main.firstChild);
   }
-  const divs = setDivGrid();
-  if (divs == "title fail"){return 0}
-  else if (divs == "header fail"){return 1}
+  
   main.style.gridTemplateAreas = getTemplateAreaString();
   let div;
   //alert(divs);
