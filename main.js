@@ -41,7 +41,6 @@ function setDivGrid(){
   }
 
   divs = ["title","head0"];
-  divGrid = grid;
 
 
   //title loop
@@ -149,10 +148,9 @@ function hide(id){
 
 function refreshElements(){
   const main = document.getElementById("gc");
-  // for (i in main.children){
-  //   alert(i);
-  //   main.removeChild(i);
-  // }
+  while (main.firstChild) {
+    main.removeChild(main.firstChild);
+  }
   const divs = setDivGrid();
   if (divs == "title fail"){return 0}
   else if (divs == "header fail"){return 1}
@@ -241,3 +239,14 @@ function changeColor(hexDark, hexLight){
 //alert(getTemplateAreaString())
 
 refreshElements();
+
+function moveOverlay(){
+  const textGrid = document.getElementById("gc");
+  const rect = textGrid.getBoundingClientRect();
+  const overlay = document.getElementById("overlay");
+  overlay.clientLeft = rect.x;
+  overlay.clientTop = rect.y;
+}
+moveOverlay();
+
+window.addEventListener("resize",moveOverlay);
