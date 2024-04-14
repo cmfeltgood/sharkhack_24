@@ -49,14 +49,18 @@
             <input type="radio" id="none" name="tool_select" value="None">
             <label for="None">None</label>
           </form>
-           <!--color picker info source: https://www.w3schools.com/tags/tryit.asp?filename=tryhtml5_input_type_color-->
-           <form action="/action_page.php"> <!--right now, this only lets users input a color and doesn't display a background color-->
-            <label for="favcolor">Select your favorite color:</label>
-            <input type="color" id="favcolor" name="favcolor" value="#ff0000"><br><br>
-            <input type="submit">
-          </form>
+          
+          <script>
+
+            function pink(){ document.body.style.background = "pink"; }
+            function sky(){ document.body.style.background = "skyblue"; }
+
+          </script>
+            
         </div>
       </div>
+      <button onclick="pink()" style="background:pink">Pink</button>
+      <button onclick="sky()" style="background:skyblue">Sky</button>
       <footer>
         <p>Created by Echo Chamber III<br>Aysha Taha, Christine Felt, Lee Cummings</p>
       </footer>
