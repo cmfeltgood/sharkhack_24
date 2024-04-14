@@ -215,21 +215,6 @@ function stopOverflow() {
   }
 }
 
-function moveOverflowBody() {
-  var b0 = document.getElementById('b0');
-  var p0 = document.getElementById('b0 p')
-  var b1 = document.getElementById('b1')
-  var p1 = document.getElementById('b1 p')
-  var b0Height = b0.height();
-  var p1Height = p0.height();
-
-  var p0text = p0.text();
-  p0text = p0text.split('');
-  
-
-}
-
-
 function changeColor(hexDark, hexLight){
   const root = document.querySelector(':root');
   root.style.setProperty('--bgDark', hexDark);
@@ -244,9 +229,9 @@ function moveOverlay(){
   const textGrid = document.getElementById("gc");
   const rect = textGrid.getBoundingClientRect();
   const overlay = document.getElementById("overlay");
-  overlay.clientLeft = rect.x;
-  overlay.clientTop = rect.y;
+  overlay.style.top = rect.y + "px";
+  overlay.style.left = rect.x + "px";
 }
-moveOverlay();
 
-window.addEventListener("resize",moveOverlay);
+moveOverlay();
+window.addEventListener("resize", moveOverlay);

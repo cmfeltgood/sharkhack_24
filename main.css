@@ -125,9 +125,12 @@ button {
   background-color: rgba(23, 82, 110, 0.3);
 }
 
-.overlay {
-  position: fixed;
+#overlay {
+  position: absolute;
   background-color: transparent;
+  z-index: 4;
+  left: 0;
+  top: 0;
 }
 
 #title {grid-area: title;}
