@@ -45,15 +45,23 @@
           
           <script>
 
-            function pink(){ document.body.style.background = "pink"; }
-            function sky(){ document.body.style.background = "skyblue"; }
+            function pink() {
+              var gc = document.getElementById("gc");
+              gc.style.backgroundColor="pink";
 
+            }
+           
+            function skyblue() {
+              document.getElementsByClassName("game-container").style.backgroundColor="skyblue";
+
+            }
+    
           </script>
             
         </div>
       </div>
-      <button onclick="pink()" style="background:pink">Pink</button>
-      <button onclick="sky()" style="background:skyblue">Sky</button>
+      <button onclick="pink()"style="background:pink">Pink</button>
+      <button onclick="skyblue()" style="background:skyblue">Sky</button>
       <footer>
         <p>Created by Echo Chamber III<br>Aysha Taha, Christine Felt, Lee Cummings</p>
       </footer>
