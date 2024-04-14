@@ -40,7 +40,7 @@ function setDivGrid(){
     }
   }
 
-  divs = ["title","head0"];
+  divs = [];
 
 
   //title loop
@@ -59,10 +59,16 @@ function setDivGrid(){
       if (row == grid.length){loop = false;}
     }
   }
-  if (squares.length == 0) {return "title fail";}
-  row = squares[0][0];
-  for (i in squares){
-    if (squares[i][0] != row){return "title fail";}
+  // if (squares.length == 0) {return "title fail";}
+  if (squares.length != 0){
+    divs.push("title");
+    row = squares[0][0];
+    for (i in squares){
+      if (squares[i][0] != row){
+        alert("Don't put the title in multiple rows!")
+        return("title fail");
+      }
+    }
   }
 
   //header loop
@@ -83,10 +89,15 @@ function setDivGrid(){
       if (row == grid.length){loop = false;}
     }
   }
-  if (squares.length == 0) {return "header fail";}
-  row = squares[0][0];
-  for (i in squares){
-    if (squares[i][0] != row){return "header fail";}
+  if (squares.length != 0){
+    divs.push("head0")
+    row = squares[0][0];
+    for (i in squares){
+      if (squares[i][0] != row){
+        alert("Don't put the header in multiple rows!")
+        return "header fail";
+      }
+    }
   }
 
 
