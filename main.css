@@ -70,7 +70,7 @@ button {
 
 .col {
   margin: 2%;
-  width: 40%;
+  width: auto;
   flex-direction: column;
 }
 
