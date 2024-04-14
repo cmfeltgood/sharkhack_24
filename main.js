@@ -238,8 +238,6 @@ function changeColor(hexDark, hexLight){
 
 //alert(getTemplateAreaString())
 
-refreshElements();
-
 function moveOverlay(){
   const textGrid = document.getElementById("gc");
   const rect = textGrid.getBoundingClientRect();
@@ -250,3 +248,5 @@ function moveOverlay(){
 
 moveOverlay();
 window.addEventListener("resize", moveOverlay);
+
+refreshElements();

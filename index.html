@@ -62,15 +62,25 @@
             <input type="radio" id="image" name="tool_select" value="Image" onclick="setMode('image')">
             <label for="image">Image</label><br>
             <input type="radio" id="none" name="tool_select" value="None" onclick="setMode('none')">
-            <label for="None">None</label>
+            <label for="none">None</label>
           </form>
-            
+        
+        <form onsubmit="changeColor(dark, '#FF7F50')" id="colorChange">
+          Background Color: <input type="text" name="dark" id="colorInput" value="#000000">
+        </form>
+
+        <button onclick="changeColor('#FF7F50',document.getElementById('colorInput').value)">heck</button>
+
         </div>
       </div>
-     
-      <div class="button">
-        <button onclick="changeColor('#FFFFFF','#FF7F50')"style="background-color: #FF7F50;">Change color</button>
+<!-- 
+      <div>
+        <input type="color" id="background" name="background" value="#e66465" />
+        <label for="background">background</label>
+        
       </div>
+    -->
+      <button style="display: none;" onclick="changeColor('#FFFFFF','#FF7F50')"style="background-color: #FF7F50;">Change color</button>
       <footer>
         <p>Created by Echo Chamber III<br>Aysha Taha, Christine Felt, Lee Cummings</p>
       </footer>
