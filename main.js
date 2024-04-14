@@ -189,7 +189,7 @@ function refreshElements(){
 
 function stopOverflow() {
   var body = document.getElementsByClassName("body");
-  body[0].firstElementChild.innerHTML = "Simmons University in Fenway was the scene of an unprecedented event today when a shark was found on the premises. The university's security personnel were alerted to the situation when the shark was detected in the university's aquatic center. Fortunately, no students or staff were harmed in this incident. The authorities were quickly alerted and the situation was handled swiftly. The shark was safely removed from the premises and released back into the ocean by a team of marine biologists.";
+  body[0].firstElementChild.innerHTML = "Simmons University in Fenway was the scene of an unprecedented event today when a shark was found on the premises. The university's security personnel were alerted to the situation when the shark was detected in the university's aquatic center. Fortunately, no students or staff were harmed in this incident. The authorities were quickly alerted and the situation was handled swiftly. The shark was safely removed from the premises and released back into the ocean by a team of marine biologists. Simmons University is committed to the safety and well-being of all students and staff. The university has launched a full investigation into the circumstances surrounding this incident and will take necessary measures to prevent any such occurrences in the future. Simmons University is grateful for the quick response of the security personnel and the authorities, which led to the situation being resolved without any harm to anyone involved. The university will continue to work closely with the authorities to ensure the safety of all its members.";
   for (let i = 0; i < body.length-1; i++) {
     b1 = body[i];
     p1 = body[i].firstElementChild;
@@ -215,21 +215,6 @@ function stopOverflow() {
   }
 }
 
-function moveOverflowBody() {
-  var b0 = document.getElementById('b0');
-  var p0 = document.getElementById('b0 p')
-  var b1 = document.getElementById('b1')
-  var p1 = document.getElementById('b1 p')
-  var b0Height = b0.height();
-  var p1Height = p0.height();
-
-  var p0text = p0.text();
-  p0text = p0text.split('');
-  
-
-}
-
-
 function changeColor(hexDark, hexLight){
   const root = document.querySelector(':root');
   root.style.setProperty('--bgDark', hexDark);
@@ -244,9 +229,9 @@ function moveOverlay(){
   const textGrid = document.getElementById("gc");
   const rect = textGrid.getBoundingClientRect();
   const overlay = document.getElementById("overlay");
-  overlay.clientLeft = rect.x;
-  overlay.clientTop = rect.y;
+  overlay.style.top = rect.y + "px";
+  overlay.style.left = rect.x + "px";
 }
-moveOverlay();
 
-window.addEventListener("resize",moveOverlay);
+moveOverlay();
+window.addEventListener("resize", moveOverlay);

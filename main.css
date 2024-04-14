@@ -112,11 +112,11 @@ button {
 }
 
 .grid-container {
+  min-width: 400px;
   display: grid;
   overflow: hidden;
   grid-template-columns: 100px 100px 100px 100px;
   grid-template-rows: 100px 100px 100px 100px 100px;
-  border: 1px white solid;
 }
 
 .grid-item {
@@ -140,13 +140,17 @@ button {
   background-color: transparent;
 }
 
-.grid-item:hover {
-  background-color: rgba(23, 82, 110, 0.3);
+.overlay > div {
+  background-color: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.2);
 }
 
-.overlay {
-  position: fixed;
+#overlay {
+  position: absolute;
   background-color: transparent;
+  z-index: 4;
+  left: 0;
+  top: 0;
 }
 
 #title {grid-area: title;}
