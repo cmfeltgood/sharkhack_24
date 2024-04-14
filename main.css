@@ -99,7 +99,42 @@ button {
   border: #f5c876 2px solid;
 }
 
-.grid-item {
-  height: 30px;
-  width: 30px;
+.game-container {
+  display: grid;
+  gap: 10px;
+  overflow: hidden;
 }
+
+.grid-item {
+  height: 50px;
+  width: 50px;
+}
+
+#title {grid-area: title;}
+#head0 {grid-area: head0;}
+#b0 {grid-area: b0;}
+#b1 {grid-area: b1;}
+#b2 {grid-area: b2;}
+#b3 {grid-area: b3;}
+#b4 {grid-area: b4;}
+#b5 {grid-area: b5;}
+#b6 {grid-area: b6;}
+#b7 {grid-area: b7;}
+#b8 {grid-area: b8;}
+#b9 {grid-area: b9;}
+#n0 {grid-area: n0;}
+#n1 {grid-area: n1;}
+#n2 {grid-area: n2;}
+#n3 {grid-area: n3;}
+#n4 {grid-area: n4;}
+#n5 {grid-area: n5;}
+#n6 {grid-area: n6;}
+#n7 {grid-area: n7;}
+#n8 {grid-area: n8;}
+#n9 {grid-area: n9;}
+#n10 {grid-area: n10;}
+#n11 {grid-area: n11;}
+#n12 {grid-area: n12;}
+#n13 {grid-area: n13;}
+#n14 {grid-area: n14;}
+#n15 {grid-area: n15;}
