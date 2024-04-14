@@ -7,23 +7,34 @@
     <meta charset=”utf-8”>
   </head>
   <body>
-    <header>
-      <nav>
-        <h1>Article Design Game</h1>
-      </nav>
-    </header>
-      <p> we should include some instructions at some point</p>
-    <div class="game_container">
-      <div class="col">
-        <p>grid goes here</p>
+    <div class="inner-container">
+      <header>
+        <nav>
+          <h1>Article Design Game</h1>
+        </nav>
+      </header>
+      <div class="instructions" id="instructions">
+        <p>Put text here</p>
+        <button onClick="hide(instructions)">Okay!</button>
       </div>
-      <div class="col">
-        <p>Menu options (title, header, etc.) goes here</p>
+      <div class="game_container">
+        <div class="col">
+          <div class="grid-container">
+            <div class="title">Title</div>
+            <div class="header1">Header 1</div>
+            <div class="header2">Header 2</div>
+            <div class="body">Body Text</div>
+            <div class="image">Image</div>
+          </div>
+          <p>grid goes here</p>
+        </div>
+        <div class="col">
+          <p>Menu options (title, header, etc.) goes here</p>
+        </div>
       </div>
+  
+      <script src="main.js"></script>  
     </div>
-
-    <script src="main.js"></script>
-
   </body>
 
 </html>
