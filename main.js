@@ -11,8 +11,10 @@ let divGrid;
 
 
 function paintGrid(row, col) {
+  const prev = grid[row][col]
   grid[row][col] = mode;
-  refreshElements();
+  const back = refreshElements();
+  if (back!= 0){grid[row][col] = prev}
 }
 
 function setMode(newMode){
@@ -159,8 +161,8 @@ function hide(id){
 
 function refreshElements(){
   const divs = setDivGrid();
-  if (divs == "title fail"){return 0}
-  else if (divs == "header fail"){return 1}
+  if (divs == "title fail"){return 1}
+  else if (divs == "header fail"){return 2}
   const main = document.getElementById("gc");
   while (main.firstChild) {
     main.removeChild(main.firstChild);
@@ -196,7 +198,8 @@ function refreshElements(){
     div.className += " grid-item";
     main.appendChild(div);
   }
-  stopOverflow()
+  stopOverflow();
+  return 0;
 }
 
 function stopOverflow() {
