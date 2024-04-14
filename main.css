@@ -112,11 +112,11 @@ button {
 }
 
 .grid-container {
+  min-width: 400px;
   display: grid;
   overflow: hidden;
   grid-template-columns: 100px 100px 100px 100px;
   grid-template-rows: 100px 100px 100px 100px 100px;
-  border: 1px white solid;
 }
 
 .grid-item {
@@ -137,6 +137,10 @@ button {
 
 .overlay {
   position: fixed;
+  background-color: transparent;
+}
+
+.overlay > div {
   background-color: transparent;
 }
 
