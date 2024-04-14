@@ -62,14 +62,17 @@ function setDivGrid(){
     }
   }
   // if (squares.length == 0) {return "title fail";}
+  let currCol = 0;
   if (squares.length != 0){
     divs.push("title");
+    currCol = squares[0][1]
     row = squares[0][0];
     for (i in squares){
-      if (squares[i][0] != row){
-        alert("Don't put the title in multiple rows!")
+      if (squares[i][0] != row || squares[i][1] != currCol){
+        alert("Don't split the title!")
         return("title fail");
       }
+      currCol +=1;
     }
   }
 
@@ -94,11 +97,13 @@ function setDivGrid(){
   if (squares.length != 0){
     divs.push("head0")
     row = squares[0][0];
+    currCol = squares[0][1]
     for (i in squares){
-      if (squares[i][0] != row){
+      if (squares[i][0] != row || squares[i][1] != currCol){
         alert("Don't put the header in multiple rows!")
         return "header fail";
       }
+      currCol += 1;
     }
   }
 
