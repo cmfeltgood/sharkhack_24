@@ -169,15 +169,56 @@ function refreshElements(){
     else if (divs[i].charAt(0) == "b"){
       div.className = 'body';
       inner = document.createElement("p");
-      inner.innerHTML = "God damn these sharks were rough. But also gay? The sharks were involved in homosexual activities, which was fun."
+      inner.innerHTML = "God damn these sharks were rough. But also gay? The sharks were involved in homosexual activities, which was fun. God damn these sharks were rough. But also gay? The sharks were involved in homosexual activities, which was fun. God damn these sharks were rough. But also gay? The sharks were involved in homosexual activities, which was fun. God damn these sharks were rough. But also gay? The sharks were involved in homosexual activities, which was fun."
       div.appendChild(inner)
     }
     else if (divs[i].charAt(0) == 'n'){div.className = 'none';}
     div.className += " grid-item"
     main.appendChild(div);
   }
+  stopOverflow()
 }
 
+function stopOverflow() {
+  var body = document.getElementsByClassName("body");
+  for (let i = 0; i < body.length-1; i++) {
+    b1 = body[i];
+    p1 = body[i].firstElementChild;
+    b2 = body[i+1];
+    p2 = body[i+1].firstElementChild;
+
+    var p1text = p1.innerHTML;
+    p1text = p1text.split(' ');
+
+    b1Height = b1.offsetHeight;
+    p1Height = p1.offsetHeight;
+
+    var p2text = []
+    while (p1Height > b1Height) {
+      char = p1text.pop();
+      p2text.unshift(char);
+
+      p1temp = p1text.join(' ');
+      p1.innerHTML = p1temp;
+      p1Height = p1.offsetHeight;
+    }
+    p2.innerHTML = p2text.join(' ');
+  }
+}
+
+function moveOverflowBody() {
+  var b0 = document.getElementById('b0');
+  var p0 = document.getElementById('b0 p')
+  var b1 = document.getElementById('b1')
+  var p1 = document.getElementById('b1 p')
+  var b0Height = b0.height();
+  var p1Height = p0.height();
+
+  var p0text = p0.text();
+  p0text = p0text.split('');
+  
+
+}
 
 
 //alert(getTemplateAreaString())
