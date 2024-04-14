@@ -26,7 +26,7 @@
       </div>
       <div class="game-container" id="game"> 
         <div class="col">
-          <div class="grid-container" id = "gc">
+          <div class="grid-container">
             <p>Add grid here every time grid is changed</p>
             <!-- <div class="title">Title</div>
             <div class="header1">Header 1</div>
@@ -48,7 +48,13 @@
             <label for="image">Image</label><br>
             <input type="radio" id="none" name="tool_select" value="None">
             <label for="None">None</label>
-          </form>          
+          </form>
+           <!--color picker info source: https://www.w3schools.com/tags/tryit.asp?filename=tryhtml5_input_type_color-->
+           <form action="/action_page.php"> <!--right now, this only lets users input a color and doesn't display a background color-->
+            <label for="favcolor">Select your favorite color:</label>
+            <input type="color" id="favcolor" name="favcolor" value="#ff0000"><br><br>
+            <input type="submit">
+          </form>
         </div>
       </div>
       <footer>
