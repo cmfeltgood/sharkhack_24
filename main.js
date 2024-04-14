@@ -41,7 +41,6 @@ function setDivGrid(){
   }
 
   divs = ["title","head0"];
-  divGrid = grid;
 
 
   //title loop
@@ -149,10 +148,9 @@ function hide(id){
 
 function refreshElements(){
   const main = document.getElementById("gc");
-  // for (i in main.children){
-  //   alert(i);
-  //   main.removeChild(i);
-  // }
+  while (main.firstChild) {
+    main.removeChild(main.firstChild);
+  }
   const divs = setDivGrid();
   if (divs == "title fail"){return 0}
   else if (divs == "header fail"){return 1}
@@ -180,11 +178,10 @@ function refreshElements(){
     else if (divs[i].charAt(0) == "b"){
       div.className = 'body';
       inner = document.createElement("p");
-      inner.innerHTML = "God damn these sharks were rough. But also gay? The sharks were involved in homosexual activities, which was fun. God damn these sharks were rough. But also gay? The sharks were involved in homosexual activities, which was fun. God damn these sharks were rough. But also gay? The sharks were involved in homosexual activities, which was fun. God damn these sharks were rough. But also gay? The sharks were involved in homosexual activities, which was fun."
-      div.appendChild(inner)
+      div.appendChild(inner);
     }
     else if (divs[i].charAt(0) == 'n'){div.className = 'none';}
-    div.className += " grid-item"
+    div.className += " grid-item";
     main.appendChild(div);
   }
   stopOverflow()
@@ -192,6 +189,7 @@ function refreshElements(){
 
 function stopOverflow() {
   var body = document.getElementsByClassName("body");
+  body[0].firstElementChild.innerHTML = "Simmons University in Fenway was the scene of an unprecedented event today when a shark was found on the premises. The university's security personnel were alerted to the situation when the shark was detected in the university's aquatic center. Fortunately, no students or staff were harmed in this incident. The authorities were quickly alerted and the situation was handled swiftly. The shark was safely removed from the premises and released back into the ocean by a team of marine biologists.";
   for (let i = 0; i < body.length-1; i++) {
     b1 = body[i];
     p1 = body[i].firstElementChild;
@@ -241,3 +239,14 @@ function changeColor(hexDark, hexLight){
 //alert(getTemplateAreaString())
 
 refreshElements();
+
+function moveOverlay(){
+  const textGrid = document.getElementById("gc");
+  const rect = textGrid.getBoundingClientRect();
+  const overlay = document.getElementById("overlay");
+  overlay.clientLeft = rect.x;
+  overlay.clientTop = rect.y;
+}
+moveOverlay();
+
+window.addEventListener("resize",moveOverlay);

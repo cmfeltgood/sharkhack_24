@@ -8,6 +8,10 @@
   margin: 0;
   padding: 0;
   font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+body {
+  background-color: #17526e;
   color: #e2d7d0;
 }
 
@@ -112,11 +116,10 @@ button {
   overflow: hidden;
   grid-template-columns: 100px 100px 100px 100px;
   grid-template-rows: 100px 100px 100px 100px 100px;
+  border: 1px white solid;
 }
 
 .grid-item {
-  /* min-height: 50px;
-  min-width: 50px; */
   border: 1px solid white;
   overflow: hidden;
   background-color: var(--bgLight);
@@ -125,6 +128,25 @@ button {
 
 .button {
   color: black;
+}
+
+
+.grid-item:hover {
+  background-color: rgba(23, 82, 110, 0.3);
+}
+
+.overlay {
+  position: fixed;
+  background-color: transparent;
+}
+
+.grid-item:hover {
+  background-color: rgba(23, 82, 110, 0.3);
+}
+
+.overlay {
+  position: fixed;
+  background-color: transparent;
 }
 
 #title {grid-area: title;}
