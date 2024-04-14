@@ -7,11 +7,12 @@ let grid = [["title","title","none","none"],
 ["header","header","header","none"],
 ["none","none","body","body"],
 ["body","none","none","none"]];
-let divGrid = grid;
+let divGrid;
 
 
 function paintGrid(row, col) {
   grid[row][col] = mode;
+  refreshElements();
 }
 
 function setMode(newMode){
@@ -31,6 +32,14 @@ function getTemplateAreaString(){
 }
 
 function setDivGrid(){
+  divGrid = []
+  for (i in grid){
+    divGrid.push([]);
+    for (j in grid[i]){
+      divGrid[i].push(grid[i][j])
+    }
+  }
+
   divs = ["title","head0"];
   divGrid = grid;
 
@@ -75,10 +84,10 @@ function setDivGrid(){
       if (row == grid.length){loop = false;}
     }
   }
-  if (squares.length == 0) {return "header fail 1";}
+  if (squares.length == 0) {return "header fail";}
   row = squares[0][0];
   for (i in squares){
-    if (squares[i][0] != row){return "header fail 2";}
+    if (squares[i][0] != row){return "header fail";}
   }
 
 
@@ -145,9 +154,11 @@ function refreshElements(){
   //   main.removeChild(i);
   // }
   const divs = setDivGrid();
+  if (divs == "title fail"){return 0}
+  else if (divs == "header fail"){return 1}
   main.style.gridTemplateAreas = getTemplateAreaString();
   let div;
-  alert(divs);
+  //alert(divs);
   let inner;
   for (i in divs){
     div = document.createElement("div");
@@ -220,6 +231,12 @@ function moveOverflowBody() {
 
 }
 
+
+function changeColor(hexDark, hexLight){
+  const root = document.querySelector(':root');
+  root.style.setProperty('--bgDark', hexDark);
+  root.style.setProperty('--bgLight', hexLight);
+}
 
 //alert(getTemplateAreaString())
 
