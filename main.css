@@ -1,10 +1,3 @@
-/* COLORS:
-#e9a407
-#a379ff
-#221d19
-#e2d7d0
- */
-
 * {
   margin: 0;
   padding: 0;
@@ -15,6 +8,7 @@
 
 h1, h2 {
   text-align: center;
+  color: #f5c876;
 }
 
 h1 {
@@ -33,6 +27,8 @@ footer {
 
 button {
   margin: 0 auto;
+  margin-top: 1%;
+  margin-bottom: 1%;
   display: block;
   padding: 1%;
   border-radius: 10px;
@@ -56,15 +52,14 @@ button {
   align-items: center;
   background-color: #25727d;
   border-radius: 10px;
+  border: #f5c876 2px solid;
 }
 
 .col {
-  margin: 2.5%;
+  margin: 2%;
   width: 40%;
   flex-direction: column;
   background-color: #25727d;
-  flex-grow: 1;
-  flex-shrink: 0;
 }
 
 .instructions {
@@ -87,7 +82,7 @@ button {
   left: 0;
   bottom: 0;
   right: 0;
-  background: rgba(0,0,0,0.25);
+  background: rgba(0,0,0,0.4);
   z-index: -2;
 }
 
@@ -98,7 +93,49 @@ button {
   left: 0;
   bottom:	 0;
   right: 0;
-  background: #FFF;
+  background: #17526e;
   z-index: -1;
   border-radius: 10px;
+  border: #f5c876 2px solid;
 }
+
+.grid-container {
+  display: grid;
+  gap: 10px;
+  overflow: hidden;
+}
+
+.grid-item {
+  min-height: 50px;
+  min-width: 50px;
+  border: 1px solid white;
+}
+
+#title {grid-area: title;}
+#head0 {grid-area: head0;}
+#b0 {grid-area: b0;}
+#b1 {grid-area: b1;}
+#b2 {grid-area: b2;}
+#b3 {grid-area: b3;}
+#b4 {grid-area: b4;}
+#b5 {grid-area: b5;}
+#b6 {grid-area: b6;}
+#b7 {grid-area: b7;}
+#b8 {grid-area: b8;}
+#b9 {grid-area: b9;}
+#n0 {grid-area: n0;}
+#n1 {grid-area: n1;}
+#n2 {grid-area: n2;}
+#n3 {grid-area: n3;}
+#n4 {grid-area: n4;}
+#n5 {grid-area: n5;}
+#n6 {grid-area: n6;}
+#n7 {grid-area: n7;}
+#n8 {grid-area: n8;}
+#n9 {grid-area: n9;}
+#n10 {grid-area: n10;}
+#n11 {grid-area: n11;}
+#n12 {grid-area: n12;}
+#n13 {grid-area: n13;}
+#n14 {grid-area: n14;}
+#n15 {grid-area: n15;}

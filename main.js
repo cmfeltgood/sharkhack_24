@@ -75,10 +75,10 @@ function setDivGrid(){
       if (row == grid.length){loop = false;}
     }
   }
-  if (squares.length == 0) {return "header fail";}
+  if (squares.length == 0) {return "header fail 1";}
   row = squares[0][0];
   for (i in squares){
-    if (squares[i][0] != row){return "header fail";}
+    if (squares[i][0] != row){return "header fail 2";}
   }
 
 
@@ -130,6 +130,7 @@ function setDivGrid(){
       if (row == grid.length){loop = false;}
     }
   }
+  return divs;
 }
 
 function hide(id){
@@ -137,6 +138,48 @@ function hide(id){
 }
 
 
-setDivGrid()
+function refreshElements(){
+  const main = document.getElementById("gc");
+  // for (i in main.children){
+  //   alert(i);
+  //   main.removeChild(i);
+  // }
+  const divs = setDivGrid();
+  main.style.gridTemplateAreas = getTemplateAreaString();
+  let div;
+  alert(divs);
+  let inner;
+  for (i in divs){
+    div = document.createElement("div");
+    div.id = divs[i];
+    
+    //alert(i)
+    if (divs[i] == "title"){
+      div.className = 'title';
+      inner = document.createElement("h1");
+      inner.innerHTML = "SHARKS ATTACK SIMMONS!!!";
+      div.appendChild(inner);
+    }
+    else if (divs[i].charAt(0) == "h"){
+      div.className = 'header';
+      inner = document.createElement("h3");
+      inner.innerHTML = "THE SHARKS WERE QUITE SPOOKYYYYY!!!!";
+      div.appendChild(inner);
+    }
+    else if (divs[i].charAt(0) == "b"){
+      div.className = 'body';
+      inner = document.createElement("p");
+      inner.innerHTML = "God damn these sharks were rough. But also gay? The sharks were involved in homosexual activities, which was fun."
+      div.appendChild(inner)
+    }
+    else if (divs[i].charAt(0) == 'n'){div.className = 'none';}
+    div.className += " grid-item"
+    main.appendChild(div);
+  }
+}
+
+
 
 //alert(getTemplateAreaString())
+
+refreshElements();
