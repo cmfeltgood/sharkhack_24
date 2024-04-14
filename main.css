@@ -15,6 +15,10 @@ body {
   color: #e2d7d0;
 }
 
+body {
+  background-color: #17526e;
+}
+
 h1, h2 {
   text-align: center;
   color: #f5c876;
@@ -59,7 +63,7 @@ button {
   width: 80%;
   justify-content: center;
   align-items: center;
-  background-color: #25727d;
+  background-color:#17526e;
   border-radius: 10px;
   border: #f5c876 2px solid;
 }
@@ -68,7 +72,6 @@ button {
   margin: 2%;
   width: 40%;
   flex-direction: column;
-  background-color: #25727d;
 }
 
 .instructions {
@@ -102,7 +105,7 @@ button {
   left: 0;
   bottom:	 0;
   right: 0;
-  background: #17526e;
+  background: var(--bgDark);
   z-index: -1;
   border-radius: 10px;
   border: #f5c876 2px solid;
@@ -119,6 +122,22 @@ button {
 .grid-item {
   border: 1px solid white;
   overflow: hidden;
+  background-color: var(--bgLight);
+
+}
+
+.button {
+  color: black;
+}
+
+
+.grid-item:hover {
+  background-color: rgba(23, 82, 110, 0.3);
+}
+
+.overlay {
+  position: fixed;
+  background-color: transparent;
 }
 
 .grid-item:hover {
